@@ -30,7 +30,7 @@ function(bsl_restore)
 endfunction()
 
 function(bsl_set value)
-    if(value STREQUAL "ON" AND value STREQUAL "OFF")
+    if(value STREQUAL "ON" OR value STREQUAL "OFF")
         set(BUILD_SHARED_LIBS ${value} CACHE BOOL "build_shared_libs on/off" FORCE)
     else()
         message(FATAL_ERROR "[bsl_set] Invalid value: ${value}. Must be ON or OFF.")
