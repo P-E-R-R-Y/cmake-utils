@@ -3,7 +3,7 @@ include_guard(GLOBAL)
 # store BUILD_SHARED_LIBS in a local value & unset it
 function(bsl_store)
     if (DEFINED BUILD_SHARED_LIBS)
-        set(BSL_LOCAL "${BUILD_SHARED_LIBS}")
+        set(BSL_LOCAL "${BUILD_SHARED_LIBS}" PARENT_SCOPE)
         unset(BUILD_SHARED_LIBS CACHE)
         message(STATUS "[bsl_store] stored 'BUILD_SHARED_LIBS' ${BSL_LOCAL} locally and unset it.")
     else()
